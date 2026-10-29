@@ -1,0 +1,5 @@
+﻿image_id,path_relative,source_type,source_reference,license,temporary_class,confirmed_class,road_relevance,photo_quality,review_status,reviewer,reviewed_at,review_notes,audit_read_status,format,width,height,size_bytes,sha256
+img_3b1ea1557f52,dataset_raw/public/gelap/pub_gelap_001.jpg,public,,,gelap,,,,belum_ditinjau,,,,ok,JPEG,2592,1936,991469,3b1ea1557f52660564d32e90df5bd47a2702b4fcfe797b8568b7fe42bf4e77a6
+img_87e86ef37975,dataset_raw/public/gelap/pub_gelap_002.jpg,public,,,gelap,,,,belum_ditinjau,,,,ok,JPEG,4000,6000,2428943,87e86ef3797510bfe7ec52784ccf127266838d52b8574d8b51345c9f0c16ff3a
+img_de4ca2423a2d,dataset_raw/public/redup/pub_redup_001.jpg,public,,,redup,,,,belum_ditinjau,,,,ok,MPO,5568,3712,10346278,de4ca2423a2d5c0d0fe0412ca75207ef7f12e7f3ee5c008fe893716e6df08c9b
+img_9ae8807e1f7c,dataset_raw/public/terang/pub_terang_001.jpg,public,,,terang,,,,belum_ditinjau,,,,ok,MPO,5568,3712,9488814,9ae8807e1f7c83cc02566222b03c0add17dcf62d815ea9a616e79dbe71d2b2cd

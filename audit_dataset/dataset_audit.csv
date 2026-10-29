@@ -1,0 +1,5 @@
+﻿path,root,temporary_class,extension,format,frame_count,width,height,size_bytes,read_status,error,sha256,manual_review_required,manual_review_reason
+dataset_raw/public/gelap/pub_gelap_001.jpg,dataset_raw,gelap,.jpg,JPEG,1,2592,1936,991469,ok,,3b1ea1557f52660564d32e90df5bd47a2702b4fcfe797b8568b7fe42bf4e77a6,True,Label folder dan relevansi visual belum dikonfirmasi manusia.
+dataset_raw/public/gelap/pub_gelap_002.jpg,dataset_raw,gelap,.jpg,JPEG,1,4000,6000,2428943,ok,,87e86ef3797510bfe7ec52784ccf127266838d52b8574d8b51345c9f0c16ff3a,True,Label folder dan relevansi visual belum dikonfirmasi manusia.
+dataset_raw/public/redup/pub_redup_001.jpg,dataset_raw,redup,.jpg,MPO,3,5568,3712,10346278,ok,,de4ca2423a2d5c0d0fe0412ca75207ef7f12e7f3ee5c008fe893716e6df08c9b,True,Label folder dan relevansi visual belum dikonfirmasi manusia.
+dataset_raw/public/terang/pub_terang_001.jpg,dataset_raw,terang,.jpg,MPO,3,5568,3712,9488814,ok,,9ae8807e1f7c83cc02566222b03c0add17dcf62d815ea9a616e79dbe71d2b2cd,True,Label folder dan relevansi visual belum dikonfirmasi manusia.

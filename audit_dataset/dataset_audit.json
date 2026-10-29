@@ -1,0 +1,115 @@
+{
+  "audit_scope": [
+    "dataset_raw",
+    "dataset"
+  ],
+  "supported_extensions": [
+    ".jpeg",
+    ".jpg",
+    ".png",
+    ".webp"
+  ],
+  "total_images": 4,
+  "readable_images": 4,
+  "failed_images": 0,
+  "counts_by_root_and_temporary_class": {
+    "dataset_raw": {
+      "gelap": 2,
+      "redup": 1,
+      "terang": 1
+    },
+    "dataset": {}
+  },
+  "empty_expected_class_folders": [
+    "dataset_raw/own/terang",
+    "dataset_raw/own/redup",
+    "dataset_raw/own/gelap",
+    "dataset/train/terang",
+    "dataset/train/redup",
+    "dataset/train/gelap",
+    "dataset/val/terang",
+    "dataset/val/redup",
+    "dataset/val/gelap",
+    "dataset/test/terang",
+    "dataset/test/redup",
+    "dataset/test/gelap"
+  ],
+  "duplicate_method": "SHA-256 hash of original file bytes; detects exact byte duplicates only.",
+  "duplicate_limitations": "It does not detect resized, recompressed, re-encoded, or visually similar images.",
+  "exact_duplicate_groups": [],
+  "records": [
+    {
+      "path": "dataset_raw/public/gelap/pub_gelap_001.jpg",
+      "root": "dataset_raw",
+      "temporary_class": "gelap",
+      "extension": ".jpg",
+      "format": "JPEG",
+      "frame_count": 1,
+      "width": 2592,
+      "height": 1936,
+      "size_bytes": 991469,
+      "read_status": "ok",
+      "error": null,
+      "sha256": "3b1ea1557f52660564d32e90df5bd47a2702b4fcfe797b8568b7fe42bf4e77a6",
+      "manual_review_required": true,
+      "manual_review_reason": "Label folder dan relevansi visual belum dikonfirmasi manusia."
+    },
+    {
+      "path": "dataset_raw/public/gelap/pub_gelap_002.jpg",
+      "root": "dataset_raw",
+      "temporary_class": "gelap",
+      "extension": ".jpg",
+      "format": "JPEG",
+      "frame_count": 1,
+      "width": 4000,
+      "height": 6000,
+      "size_bytes": 2428943,
+      "read_status": "ok",
+      "error": null,
+      "sha256": "87e86ef3797510bfe7ec52784ccf127266838d52b8574d8b51345c9f0c16ff3a",
+      "manual_review_required": true,
+      "manual_review_reason": "Label folder dan relevansi visual belum dikonfirmasi manusia."
+    },
+    {
+      "path": "dataset_raw/public/redup/pub_redup_001.jpg",
+      "root": "dataset_raw",
+      "temporary_class": "redup",
+      "extension": ".jpg",
+      "format": "MPO",
+      "frame_count": 3,
+      "width": 5568,
+      "height": 3712,
+      "size_bytes": 10346278,
+      "read_status": "ok",
+      "error": null,
+      "sha256": "de4ca2423a2d5c0d0fe0412ca75207ef7f12e7f3ee5c008fe893716e6df08c9b",
+      "manual_review_required": true,
+      "manual_review_reason": "Label folder dan relevansi visual belum dikonfirmasi manusia."
+    },
+    {
+      "path": "dataset_raw/public/terang/pub_terang_001.jpg",
+      "root": "dataset_raw",
+      "temporary_class": "terang",
+      "extension": ".jpg",
+      "format": "MPO",
+      "frame_count": 3,
+      "width": 5568,
+      "height": 3712,
+      "size_bytes": 9488814,
+      "read_status": "ok",
+      "error": null,
+      "sha256": "9ae8807e1f7c83cc02566222b03c0add17dcf62d815ea9a616e79dbe71d2b2cd",
+      "manual_review_required": true,
+      "manual_review_reason": "Label folder dan relevansi visual belum dikonfirmasi manusia."
+    }
+  ],
+  "format_notes": [
+    "Ekstensi file menunjukkan nama akhiran, sedangkan format adalah format aktual yang dibaca Pillow.",
+    "File .jpg dengan format MPO bukan otomatis rusak; MPO dapat memiliki beberapa frame.",
+    "Frame pertama digunakan hanya untuk inspeksi metadata; tidak ada frame yang diekspor atau diubah."
+  ],
+  "warnings": [
+    "temporary_class is inferred from the folder name and is not a confirmed visual label.",
+    "All readable images require human review for relevance, label, source, and license."
+  ]
+}
