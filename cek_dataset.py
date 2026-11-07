@@ -24,7 +24,12 @@ from PIL import Image, ImageOps
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
 DATASET_ROOTS = (Path("dataset_raw"), Path("dataset"))
 EXPECTED_SPLITS = ("train", "val", "test")
-EXPECTED_CLASSES = ("terang", "redup", "gelap")
+EXPECTED_CLASSES = (
+    "bukan_jalan",
+    "terang",
+    "redup",
+    "gelap",
+)
 CURATION_FIELDS = [
     "image_id", "path_relative", "source_type", "source_reference", "license",
     "temporary_class", "confirmed_class", "road_relevance", "photo_quality",
