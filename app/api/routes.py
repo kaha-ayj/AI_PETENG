@@ -1,42 +1,68 @@
-from fastapi import APIRouter, File, HTTPException, UploadFile
+from fastapi import APIRouter, File, UploadFile
+
+from app.core.config import MODEL_PATH, MODEL_VERSION
+from app.core.errors import error_response
+from app.core.request_context import get_request_id
+from app.schemas.prediction import ErrorResponse, ValidationResponse
+from app.services.image_validation import ImageValidationError, validate_image_bytes
+from app.services.prediction_service import (
+    InferenceError,
+    ModelUnavailableError,
+    PredictionService,
+)
 
 router = APIRouter()
+prediction_service = PredictionService()
 
-@router.post("/validate", tags=["AI Validation"])
-async def validate_report(
-    image: UploadFile = File(...),
-):
-    allowed_types = {"image/jpeg", "image/png", "image/webp"}
 
-    if image.content_type not in allowed_types:
-        raise HTTPException(
-            status_code=400,
-            detail="Format foto harus JPG, PNG, atau WEBP.",
-        )
-
+@router.post(
+    "/validate",
+    tags=["AI Validation"],
+    response_model=ValidationResponse,
+    responses={
+        400: {"model": ErrorResponse},
+        413: {"model": ErrorResponse},
+        500: {"model": ErrorResponse},
+        503: {"model": ErrorResponse},
+    },
+)
+async def validate_report(image: UploadFile = File(...)):
     image_bytes = await image.read()
+    try:
+        validate_image_bytes(image_bytes, image.content_type)
+    except ImageValidationError as error:
+        return error_response(error.status_code, error.error_code, error.message)
 
-    if not image_bytes:
-        raise HTTPException(
-            status_code=400,
-            detail="Foto yang diunggah kosong.",
-        )
+    try:
+        result = prediction_service.predict(image_bytes)
+    except ModelUnavailableError as error:
+        return error_response(503, "MODEL_UNAVAILABLE", str(error))
+    except InferenceError as error:
+        return error_response(500, "INFERENCE_FAILED", str(error))
 
-    max_size = 10 * 1024 * 1024
+    return ValidationResponse(
+        success=True,
+        request_id=get_request_id(),
+        filename=image.filename,
+        size_bytes=len(image_bytes),
+        **result,
+    )
 
-    if len(image_bytes) > max_size:
-        raise HTTPException(
-            status_code=413,
-            detail="Ukuran foto maksimal 10 MB.",
-        )
 
+@router.get("/ready", tags=["Health"], response_model=dict)
+def readiness_check():
+    try:
+        if not prediction_service.loaded:
+            prediction_service.load()
+    except ModelUnavailableError:
+        return {
+            "status": "not_ready",
+            "model_loaded": False,
+            "model_version": MODEL_VERSION,
+            "model_path": str(MODEL_PATH),
+        }
     return {
-        "success": True,
-        "message": (
-            "Foto diterima. Model AI belum diimplementasikan."
-        ),
-        "filename": image.filename,
-        "size_bytes": len(image_bytes),
-        "ai_status": "belum_diproses",
-        "lighting_level": None,
+        "status": "ready",
+        "model_loaded": True,
+        "model_version": MODEL_VERSION,
     }

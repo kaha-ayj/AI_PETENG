@@ -1,5 +1,13 @@
+import logging
+
 from fastapi import FastAPI
+from fastapi.exceptions import RequestValidationError
+
 from app.api.routes import router
+from app.core.errors import request_validation_error_handler
+from app.middleware import RequestContextMiddleware
+
+logging.basicConfig(level=logging.INFO)
 
 app = FastAPI(
     title="AI PETENG API",
@@ -10,6 +18,8 @@ app = FastAPI(
     version="1.0.0",
 )
 
+app.add_exception_handler(RequestValidationError, request_validation_error_handler)
+app.add_middleware(RequestContextMiddleware)
 app.include_router(router, prefix="/api/v1/ai")
 
 

@@ -1,0 +1,9 @@
+path,actual,predicted,confidence,correct
+dataset/test/bukan_jalan/pub_bukan jalan_002.jpg,bukan_jalan,terang,0.47765,False
+dataset/test/bukan_jalan/pub_bukan jalan_006.jpg,bukan_jalan,gelap,0.454955,False
+dataset/test/gelap/pub_gelap_009.jpg,gelap,redup,0.588777,False
+dataset/test/gelap/pub_gelap_012.jpg,gelap,gelap,0.642256,True
+dataset/test/redup/pub_redup_001.jpg,redup,redup,0.573764,True
+dataset/test/redup/pub_redup_007.jpg,redup,redup,0.641358,True
+dataset/test/terang/pub_terang_008.jpg,terang,terang,0.736027,True
+dataset/test/terang/pub_terang_010.jpg,terang,terang,0.897094,True

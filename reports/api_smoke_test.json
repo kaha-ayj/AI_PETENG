@@ -1,0 +1,91 @@
+{
+  "readiness": {
+    "status": "ready",
+    "model_loaded": true,
+    "model_version": "resnet18-peteng-v1"
+  },
+  "sample_count": 8,
+  "successful_requests": 8,
+  "results": [
+    {
+      "path": "dataset/test/bukan_jalan/pub_bukan jalan_002.jpg",
+      "expected_class": "bukan_jalan",
+      "status_code": 200,
+      "ai_status": "perlu_tinjauan_manual",
+      "photo_status": "perlu_tinjauan",
+      "lighting_class": null,
+      "confidence": 0.4776497483253479,
+      "error_code": null
+    },
+    {
+      "path": "dataset/test/bukan_jalan/pub_bukan jalan_006.jpg",
+      "expected_class": "bukan_jalan",
+      "status_code": 200,
+      "ai_status": "perlu_tinjauan_manual",
+      "photo_status": "perlu_tinjauan",
+      "lighting_class": null,
+      "confidence": 0.4549553692340851,
+      "error_code": null
+    },
+    {
+      "path": "dataset/test/gelap/pub_gelap_009.jpg",
+      "expected_class": "gelap",
+      "status_code": 200,
+      "ai_status": "perlu_tinjauan_manual",
+      "photo_status": "perlu_tinjauan",
+      "lighting_class": null,
+      "confidence": 0.5887773036956787,
+      "error_code": null
+    },
+    {
+      "path": "dataset/test/gelap/pub_gelap_012.jpg",
+      "expected_class": "gelap",
+      "status_code": 200,
+      "ai_status": "perlu_tinjauan_manual",
+      "photo_status": "perlu_tinjauan",
+      "lighting_class": null,
+      "confidence": 0.6422558426856995,
+      "error_code": null
+    },
+    {
+      "path": "dataset/test/redup/pub_redup_001.jpg",
+      "expected_class": "redup",
+      "status_code": 200,
+      "ai_status": "perlu_tinjauan_manual",
+      "photo_status": "perlu_tinjauan",
+      "lighting_class": null,
+      "confidence": 0.5737645030021667,
+      "error_code": null
+    },
+    {
+      "path": "dataset/test/redup/pub_redup_007.jpg",
+      "expected_class": "redup",
+      "status_code": 200,
+      "ai_status": "perlu_tinjauan_manual",
+      "photo_status": "perlu_tinjauan",
+      "lighting_class": null,
+      "confidence": 0.6413580775260925,
+      "error_code": null
+    },
+    {
+      "path": "dataset/test/terang/pub_terang_008.jpg",
+      "expected_class": "terang",
+      "status_code": 200,
+      "ai_status": "selesai",
+      "photo_status": "layak_dinilai",
+      "lighting_class": "terang",
+      "confidence": 0.7360270619392395,
+      "error_code": null
+    },
+    {
+      "path": "dataset/test/terang/pub_terang_010.jpg",
+      "expected_class": "terang",
+      "status_code": 200,
+      "ai_status": "selesai",
+      "photo_status": "layak_dinilai",
+      "lighting_class": "terang",
+      "confidence": 0.8970938324928284,
+      "error_code": null
+    }
+  ]
+}

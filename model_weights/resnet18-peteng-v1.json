@@ -1,0 +1,18 @@
+{
+  "model_version": "resnet18-peteng-v1",
+  "architecture": "resnet18",
+  "classes": [
+    "bukan_jalan",
+    "gelap",
+    "redup",
+    "terang"
+  ],
+  "image_size": 224,
+  "seed": 2026,
+  "epochs": 5,
+  "batch_size": 4,
+  "learning_rate": 0.001,
+  "freeze_epochs": 1,
+  "device": "cpu",
+  "best_validation_macro_f1": 0.5333333333333333
+}
