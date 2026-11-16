@@ -47,20 +47,6 @@ Ukuran maksimum awal: 10 MB.
 }
 ```
 
-## Response perlu review
-
-```json
-{
-  "success": true,
-  "ai_status": "perlu_tinjauan_manual",
-  "photo_status": "perlu_tinjauan",
-  "lighting_class": null,
-  "confidence": 0.62,
-  "model_version": "resnet18-peteng-v1",
-  "message": "Confidence model belum cukup untuk memberikan hasil otomatis."
-}
-```
-
 ## Response foto tidak layak
 
 ```json
@@ -71,7 +57,7 @@ Ukuran maksimum awal: 10 MB.
   "lighting_class": null,
   "confidence": 0.91,
   "model_version": "resnet18-peteng-v1",
-  "message": "Foto tidak menunjukkan jalan yang relevan untuk dianalisis."
+  "message": "Foto tidak menampilkan kondisi jalan. Harap unggah ulang foto yang sesuai."
 }
 ```
 
@@ -133,7 +119,7 @@ Endpoint tersebut mengembalikan status bisnis laporan dan hasil AI yang sudah di
 
 - [ ] Backend dapat mengirim multipart field bernama `image`.
 - [ ] Backend dapat membaca response sukses.
-- [ ] Backend membedakan `perlu_tinjauan_manual` dari `gagal`.
+- [ ] Backend membedakan foto `tidak_layak` dari kegagalan teknis HTTP non-2xx.
 - [ ] Backend menangani HTTP 503.
 - [ ] Backend tidak menerima hasil prediksi mentah dari Frontend sebagai sumber kebenaran.
 - [ ] Frontend membaca hasil dari Backend.

@@ -2,7 +2,7 @@
 
 ## Tujuan
 
-Melatih model klasifikasi gambar menggunakan CNN transfer learning untuk memprediksi empat kelas baseline:
+Melatih model klasifikasi gambar menggunakan CNN transfer learning untuk memprediksi empat kelas: tiga kelas pencahayaan dan satu kelas kelayakan foto.
 
 ```text
 bukan_jalan

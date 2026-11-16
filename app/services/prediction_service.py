@@ -72,15 +72,6 @@ class PredictionService:
         except (OSError, RuntimeError, ValueError) as error:
             raise InferenceError("Inferensi gambar gagal.") from error
 
-        if score < self.confidence_threshold:
-            return {
-                "ai_status": "perlu_tinjauan_manual",
-                "photo_status": "perlu_tinjauan",
-                "lighting_class": None,
-                "confidence": score,
-                "model_version": self.model_version,
-                "message": "Confidence model belum cukup untuk memberikan hasil otomatis.",
-            }
         if label == "bukan_jalan":
             return {
                 "ai_status": "selesai",
@@ -88,8 +79,10 @@ class PredictionService:
                 "lighting_class": None,
                 "confidence": score,
                 "model_version": self.model_version,
-                "message": "Foto tidak menunjukkan jalan yang relevan untuk dianalisis.",
+                "message": "Foto tidak menampilkan kondisi jalan. Harap unggah ulang foto yang sesuai.",
             }
+        if score < self.confidence_threshold:
+            raise InferenceError("Confidence model terlalu rendah untuk hasil yang konsisten.")
         return {
             "ai_status": "selesai",
             "photo_status": "layak_dinilai",

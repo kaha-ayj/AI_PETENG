@@ -16,7 +16,7 @@ Menilai kemampuan model pada data yang tidak digunakan saat training dan memaham
 
 Accuracy tidak boleh menjadi satu-satunya indikator. Recall `gelap`, misalnya, perlu dianalisis terpisah karena kegagalan mengenali foto gelap dapat berdampak pada tujuan produk.
 
-## Evaluasi empat kelas
+## Evaluasi kelas
 
 Evaluasi awal dilakukan untuk:
 
@@ -52,11 +52,7 @@ Simpan contoh false positive dan false negative. Untuk setiap kesalahan, catat:
 
 ## Threshold confidence
 
-Confidence threshold tidak boleh dipilih hanya berdasarkan asumsi. Evaluasi threshold pada validation set dan pilih berdasarkan trade-off antara:
-
-- Prediksi yang cukup meyakinkan.
-- Jumlah foto yang diarahkan ke tinjauan manual.
-- Kesalahan pada kelas pencahayaan.
+Confidence threshold tidak boleh dipilih hanya berdasarkan asumsi. Evaluasi threshold pada validation set dan pilih berdasarkan trade-off antara prediksi kelas yang cukup meyakinkan dan kesalahan pada kelas pencahayaan serta kelayakan foto. Prediksi di bawah threshold menjadi kegagalan inferensi, bukan keputusan kelayakan.
 
 Test set hanya digunakan untuk evaluasi akhir.
 

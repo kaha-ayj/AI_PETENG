@@ -1,0 +1,23 @@
+{
+  "seed": 2026,
+  "counts": {
+    "train": {
+      "bukan_jalan": 7,
+      "terang": 10,
+      "redup": 7,
+      "gelap": 16
+    },
+    "val": {
+      "bukan_jalan": 2,
+      "terang": 2,
+      "redup": 2,
+      "gelap": 3
+    },
+    "test": {
+      "bukan_jalan": 2,
+      "terang": 2,
+      "redup": 2,
+      "gelap": 3
+    }
+  }
+}

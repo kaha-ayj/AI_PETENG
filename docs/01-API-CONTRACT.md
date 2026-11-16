@@ -43,17 +43,13 @@ Format yang diterima: JPEG, PNG, dan WebP. Batas awal: 10 MB.
 
 `ai_status`:
 
-- `belum_diproses`
-- `diproses`
 - `selesai`
-- `perlu_tinjauan_manual`
 - `gagal`
 
 `photo_status`:
 
 - `layak_dinilai`
 - `tidak_layak`
-- `perlu_tinjauan`
 
 `lighting_class`:
 
@@ -62,7 +58,7 @@ Format yang diterima: JPEG, PNG, dan WebP. Batas awal: 10 MB.
 - `gelap`
 - `null`
 
-Jika prediksi CNN adalah `bukan_jalan`, response harus memakai `photo_status: tidak_layak` dan `lighting_class: null`.
+Jika prediksi CNN adalah `bukan_jalan`, response memakai `ai_status: selesai`, `photo_status: tidak_layak`, dan `lighting_class: null`. Confidence yang tidak memadai untuk hasil yang konsisten menghasilkan HTTP 500 (`INFERENCE_FAILED`), bukan status tinjauan.
 
 ## Response error
 

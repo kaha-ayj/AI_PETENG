@@ -64,14 +64,12 @@ Frontend tidak menjadi sumber kebenaran hasil AI. Backend Go menjadi sumber kebe
 - `belum_diproses`
 - `diproses`
 - `selesai`
-- `perlu_tinjauan_manual`
 - `gagal`
 
 ### Status foto
 
 - `layak_dinilai`
 - `tidak_layak`
-- `perlu_tinjauan`
 
 ### Status bisnis laporan
 
@@ -79,9 +77,6 @@ Status final ditentukan Backend Go. Contoh status awal:
 
 - `diajukan`
 - `diproses_ai`
-- `menunggu_tinjauan_manual`
-- `siap_ditinjau`
-- `ditinjau`
 - `selesai`
 
 Nama final status bisnis perlu disepakati di kontrak Backend Go.
@@ -122,9 +117,9 @@ Response AI disimpan oleh Backend bersama:
 
 Backend mempertahankan laporan dan mengubah status menjadi status retry atau review teknis. Kegagalan AI tidak boleh dianggap sebagai foto tidak layak.
 
-### AI mengembalikan confidence rendah
+### AI mengembalikan hasil inferensi yang tidak konsisten
 
-Backend menyimpan hasil dengan status `menunggu_tinjauan_manual`.
+AI mengembalikan HTTP non-2xx (`INFERENCE_FAILED`). Backend tidak menyimpan hasil tersebut sebagai keputusan foto; kegagalan layanan dapat dicoba ulang.
 
 ### AI mengembalikan `bukan_jalan`
 
