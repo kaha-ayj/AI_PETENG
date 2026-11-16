@@ -56,13 +56,9 @@ photo_status = tidak_layak
 lighting_class = null
 ```
 
-### Confidence rendah
+### Confidence tidak mencukupi
 
-```text
-ai_status = perlu_tinjauan_manual
-photo_status = perlu_tinjauan
-lighting_class = null atau hasil kandidat, sesuai kontrak final
-```
+Confidence di bawah threshold adalah kegagalan inferensi, bukan keputusan tentang kelayakan foto. Service mengembalikan HTTP 500 dengan `error_code = INFERENCE_FAILED`; Backend tidak boleh menyimpannya sebagai `tidak_valid`.
 
 ### Model tidak tersedia
 

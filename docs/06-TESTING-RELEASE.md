@@ -35,7 +35,7 @@ Skenario upload:
 - File bukan gambar dengan MIME palsu.
 - Foto yang menghasilkan masing-masing kelas.
 - Foto `bukan_jalan`.
-- Prediksi confidence rendah.
+- Prediksi confidence di bawah threshold menghasilkan error inferensi, bukan keputusan tidak layak.
 - Model tidak tersedia.
 
 ## Kontrak dengan backend Go

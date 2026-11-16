@@ -29,7 +29,7 @@ def image_bytes(format_name: str = "JPEG") -> bytes:
     return buffer.getvalue()
 
 
-def test_validate_accepts_valid_jpeg(monkeypatch):
+def test_validate_returns_complete_backend_contract_for_valid_jpeg(monkeypatch):
     monkeypatch.setattr("app.api.routes.prediction_service", FakePredictionService())
     response = client.post(
         "/api/v1/ai/validate",
@@ -41,6 +41,10 @@ def test_validate_accepts_valid_jpeg(monkeypatch):
     assert response.json()["ai_status"] == "selesai"
     assert response.json()["lighting_class"] == "redup"
     assert response.json()["confidence"] == 0.91
+    assert response.json()["photo_status"] == "layak_dinilai"
+    assert response.json()["success"] is True
+    assert response.json()["request_id"]
+    assert response.json()["message"] == "Foto berhasil dianalisis."
 
 
 def test_validate_rejects_unsupported_media_type():

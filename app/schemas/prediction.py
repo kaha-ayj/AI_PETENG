@@ -6,14 +6,8 @@ from pydantic import BaseModel
 
 
 LightingClass = Literal["terang", "redup", "gelap"]
-AIStatus = Literal[
-    "belum_diproses",
-    "diproses",
-    "selesai",
-    "perlu_tinjauan_manual",
-    "gagal",
-]
-PhotoStatus = Literal["layak_dinilai", "tidak_layak", "perlu_tinjauan"]
+AIStatus = Literal["selesai", "gagal"]
+PhotoStatus = Literal["layak_dinilai", "tidak_layak"]
 
 
 class ValidationResponse(BaseModel):

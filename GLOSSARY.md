@@ -26,11 +26,11 @@ Proses validasi berkas dan inferensi CNN terhadap foto. Analisis AI bukan keputu
 
 ## Status AI
 
-Status teknis proses analisis, seperti `belum_diproses`, `diproses`, `selesai`, `perlu_tinjauan_manual`, dan `gagal`.
+Status teknis proses analisis, yaitu `selesai` untuk inferensi sukses atau `gagal` untuk kegagalan teknis.
 
 ## Status foto
 
-Penilaian kelayakan foto untuk klasifikasi, yaitu `layak_dinilai`, `tidak_layak`, atau `perlu_tinjauan`.
+Penilaian AI terhadap kelayakan foto, yaitu `layak_dinilai` atau `tidak_layak`. Foto tidak layak dapat dikirim ulang oleh warga.
 
 ## Status bisnis laporan
 
@@ -54,4 +54,4 @@ Komponen yang bertanggung jawab menyimpan dan menentukan keadaan resmi suatu dat
 
 ## Tinjauan manual
 
-Pemeriksaan manusia terhadap foto atau hasil AI ketika foto tidak relevan, confidence rendah, atau proses membutuhkan keputusan petugas.
+Pemeriksaan manual berada di luar alur validasi AI PETENG; foto tidak layak meminta warga mengunggah foto yang sesuai, sedangkan kegagalan teknis ditangani sebagai error layanan.
